@@ -12,7 +12,7 @@ const FlipLink = ({ children, href }: FlipLinkProps) => {
 			initial="rest"
 			whileHover="hover"
 			animate="rest"
-			className="relative overflow-hidden px-4 py-1.5 text-white block rounded-full hover:bg-white/5 transition-colors"
+			className="relative overflow-hidden px-1.5 sm:px-4 py-0.5 sm:py-1.5 text-white block rounded-full hover:bg-white/5 transition-colors text-[10px] sm:text-base"
 		>
 			<div className="relative overflow-hidden block font-medium">
 				<motion.span

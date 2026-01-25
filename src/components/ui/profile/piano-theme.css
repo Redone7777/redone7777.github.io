@@ -1,0 +1,48 @@
+/* Custom react-piano theme to match site colors */
+
+/* Active key color - lime green */
+.ReactPiano__Key--active {
+    background: #c8f560 !important;
+}
+
+.ReactPiano__Key--active.ReactPiano__Key--accidental {
+    background: #a8d040 !important;
+}
+
+/* Natural (white) keys */
+.ReactPiano__Key--natural {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 0 0 4px 4px;
+}
+
+.ReactPiano__Key--natural:hover {
+    background: #f5f5f5;
+}
+
+/* Accidental (black) keys */
+.ReactPiano__Key--accidental {
+    background: #1a1a1a;
+    border: none;
+    border-radius: 0 0 3px 3px;
+}
+
+.ReactPiano__Key--accidental:hover {
+    background: #2a2a2a;
+}
+
+/* Key label styling */
+.ReactPiano__NoteLabelContainer {
+    font-size: 10px;
+    font-weight: 600;
+    color: #666;
+}
+
+.ReactPiano__Key--active .ReactPiano__NoteLabelContainer {
+    color: #0a0a0a;
+}
+
+/* Smooth transition */
+.ReactPiano__Key {
+    transition: background-color 0.1s ease;
+}

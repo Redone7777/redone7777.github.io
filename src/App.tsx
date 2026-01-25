@@ -1,17 +1,36 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/sections/Hero";
+import Projects from "./components/sections/Projects";
+import Skills from "./components/sections/Skills";
+import Profile from "./components/sections/Profile";
+import Contact from "./components/sections/Contact";
+import { useSmoothScroll } from "./hooks/useSmoothScroll";
 
 function App() {
+	useSmoothScroll();
+
 	return (
 		<>
 			<Navbar />
-			<div className="min-h-[200vh] pt-32 px-8 flex flex-col items-center gap-16 font-sans">
-				<Hero />
 
-				<h1 className="text-white text-4xl text-center font-bold mt-20 opacity-20 hover:opacity-100 transition-opacity duration-300 cursor-default">
-					Hello World !
-				</h1>
-			</div>
+			{/* Hero Section - Full viewport height */}
+			<Hero />
+
+			{/* Projets Section - Separated from Hero */}
+			<Projects />
+
+			{/* Skills Section - Bento Grid */}
+			<Skills />
+
+			{/* Profile Section - About & Parcours */}
+			<Profile />
+
+			{/* Contact Section - Interactive Piano */}
+			<Contact />
+
+			{/* Footer */}
+			<Footer />
 		</>
 	);
 }

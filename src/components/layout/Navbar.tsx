@@ -36,13 +36,14 @@ const Navbar = () => {
 	}, []);
 
 	const navItems = [
-		{ name: "Home", href: "/" },
-		{ name: "About", href: "#about" },
-		{ name: "Projects", href: "#projects" },
+		{ name: "Accueil", href: "#hero" },
+		{ name: "Projets", href: "#projets" },
+		{ name: "Compétences", href: "#competences" },
+		{ name: "Profil", href: "#profil" },
 	];
 
 	return (
-		<div className="fixed top-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
+		<div className="fixed top-2 sm:top-4 left-2 right-2 sm:left-0 sm:right-0 flex justify-center z-50 pointer-events-none">
 			<motion.nav
 				layout
 				initial={{ y: -100, opacity: 0 }}
@@ -53,7 +54,7 @@ const Navbar = () => {
 					damping: 22,
 					mass: 0.8,
 				}}
-				className="pointer-events-auto bg-black/60 rounded-full border border-white/10 p-2.5 flex items-center gap-2 backdrop-blur-lg shadow-lg overflow-hidden"
+				className="pointer-events-auto bg-black/60 rounded-full border border-white/10 p-1 sm:p-2.5 flex items-center gap-0.5 sm:gap-2 backdrop-blur-lg shadow-lg overflow-hidden"
 			>
 				<Logo />
 
@@ -71,7 +72,7 @@ const Logo = () => (
 	<motion.div layout="position" className="relative z-20">
 		<a
 			href="/"
-			className="flex items-center justify-center w-11 h-11 bg-[#d0ff71] rounded-full text-neutral-800 font-bold text-lg tracking-tighter hover:scale-105 transition-transform"
+			className="flex items-center justify-center w-7 h-7 sm:w-11 sm:h-11 bg-[#d0ff71] rounded-full text-neutral-800 font-bold text-[10px] sm:text-lg tracking-tighter hover:scale-105 transition-transform"
 		>
 			RK
 		</a>
@@ -86,10 +87,10 @@ const FullNav = ({ navItems }: { navItems: { name: string; href: string }[] }) =
 		animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
 		exit={{ opacity: 0, x: -10, filter: "blur(4px)" }}
 		transition={{ duration: 0.3, ease: "easeInOut" }}
-		className="flex items-center gap-4 pl-2"
+		className="flex items-center gap-1 sm:gap-4 pl-1 sm:pl-2"
 	>
 		{/* Liens de navigation */}
-		<div className="flex items-center gap-1">
+		<div className="flex items-center gap-0 sm:gap-1">
 			{navItems.map(item => (
 				<FlipLink key={item.name} href={item.href}>
 					{item.name}
@@ -110,13 +111,13 @@ const ReducedNav = () => (
 		animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
 		exit={{ opacity: 0, x: 10, filter: "blur(4px)" }}
 		transition={{ duration: 0.3, ease: "easeInOut" }}
-		className="flex items-center gap-3 h-11 pl-1"
+		className="flex items-center gap-2 sm:gap-3 h-9 sm:h-11 pl-1"
 	>
-		<div className="w-[1px] h-5 bg-white/20"></div>
+		<div className="w-[1px] h-4 sm:h-5 bg-white/20"></div>
 
-		<div className="flex items-center gap-3 pr-2">
-			<FlipLink key="available-for-work" href="#contact">
-				Available for work
+		<div className="flex items-center gap-2 sm:gap-3 pr-1 sm:pr-2">
+			<FlipLink key="open-for-work" href="#contact">
+				Open to work
 			</FlipLink>
 			<div className="relative flex items-center justify-center w-3 h-3">
 				<span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#d0ff71] opacity-75"></span>
@@ -132,7 +133,7 @@ const ContactButton = () => (
 		initial="rest"
 		animate="rest"
 		whileHover="hover"
-		className="relative overflow-hidden bg-white text-black rounded-full h-11 px-6 flex items-center font-medium"
+		className="relative overflow-hidden bg-white text-black rounded-full h-6 sm:h-11 px-2 sm:px-6 flex items-center font-medium text-[10px] sm:text-base"
 	>
 		<motion.div
 			variants={{
